@@ -43,7 +43,7 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - uses: actions/labeler@v6.1.0
+      - uses: actions/labeler@v6.0.3
         with:
           configuration-path: .github/labeler.yml
 
@@ -53,7 +53,7 @@ jobs:
     if: ${{ needs.changes.outputs.code == 'true' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6.1.0
+      - uses: actions/checkout@v6.0.3
       - uses: oven-sh/setup-bun@v2.2.0
       - run: bun install --frozen-lockfile
       - run: bun run lint
@@ -65,7 +65,7 @@ jobs:
     if: ${{ needs.changes.outputs.code == 'true' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6.1.0
+      - uses: actions/checkout@v6.0.3
       - uses: oven-sh/setup-bun@v2.2.0
       - run: bun install --frozen-lockfile
       - run: bun run typecheck
@@ -76,7 +76,7 @@ jobs:
     if: ${{ needs.changes.outputs.code == 'true' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6.1.0
+      - uses: actions/checkout@v6.0.3
       - uses: oven-sh/setup-bun@v2.2.0
       - run: bun install --frozen-lockfile
       - run: bun run build
