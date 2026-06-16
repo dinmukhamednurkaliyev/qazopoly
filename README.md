@@ -1,75 +1,20 @@
-# Nuxt Minimal Starter
+# Qazopoly
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+[![Stack: Bun](https://img.shields.io/badge/Stack-Bun-black?style=flat&logo=bun&logoColor=white)](https://bun.sh)
+[![Stack: Vue 3](https://img.shields.io/badge/Stack-Vue%203-4FC08D?style=flat&logo=vue.js&logoColor=white)](https://vuejs.org)
+[![Stack: Nuxt 3](https://img.shields.io/badge/Stack-Nuxt%203-00DC82?style=flat&logo=nuxt&logoColor=white)](https://nuxt.com)
+[![Stack: Phaser 3](https://img.shields.io/badge/Stack-Phaser%203-8A2BE2?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZmZmZiIgZD0iTTEyIDJMMiAyMmgyMEwxMiAydm0wIDNsNi41IDE0aC0xM0wxMiA1bTEuNzUgNWgtMy41di43NWgzLjVWMTBtMCAyLjVoLTMuNXYuNzVoMy41di0uNzUiLz48L3N2Zz4=&logoColor=white)](https://phaser.io)
+[![Stack: Pinia](https://img.shields.io/badge/Stack-Pinia-42b883?style=flat&logo=pinia&logoColor=white)](https://pinia.vuejs.org)
+[![Stack: TailwindCSS](https://img.shields.io/badge/Stack-TailwindCSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
-## Setup
+## Overview
 
-Make sure to install dependencies:
+> **Localization:** The game interface and content are fully localized in Kazakh and Russian for the local market.
 
-```bash
-# npm
-npm install
+**Qazopoly** is a satirical economic board game that pokes fun at everyday life, cultural clichés, and common household situations in Kazakhstan. Combining classic monopoly mechanics with local flavor, the game offers a humorous look at real-world scenarios through interactive gameplay.
 
-# pnpm
-pnpm install
+## License
 
-# yarn
-yarn install
+This project is proprietary and closed-source. All rights reserved by the copyright holder.
 
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+See the [LICENSE](LICENSE) file for detailed legal terms and restrictions regarding the source code.
