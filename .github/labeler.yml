@@ -1,0 +1,12 @@
+
+infrastructure:
+  - changed-files:
+      - any-glob-to-any-file: '.github/**/*'
+
+frontend:
+  - changed-files:
+      - any-glob-to-any-file: ['components/**/*', 'pages/**/*', 'assets/**/*']
+
+game-engine:
+  - changed-files:
+      - any-glob-to-any-file: ['plugins/phaser/**/*', 'game/**/*'] 

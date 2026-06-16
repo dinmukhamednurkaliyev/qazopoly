@@ -1,5 +1,5 @@
 {
-  "name": "monopoly-kz",
+  "name": "qazopoly",
   "type": "module",
   "private": true,
   "scripts": {
@@ -7,11 +7,15 @@
     "dev": "NODE_OPTIONS='--no-warnings' nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "typecheck": "nuxi typecheck"
   },
   "dependencies": {
+    "@nuxt/eslint": "1.16.0",
     "@nuxt/ui": "4.8.2",
     "@pinia/nuxt": "0.11.3",
+    "eslint": "^9.0.0 || ^10.0.0",
     "nuxt": "^4.4.8",
     "phaser": "^4.1.0",
     "pinia": "^3.0.4",
@@ -19,5 +23,8 @@
     "typescript": "^6.0.3",
     "vue": "^3.5.35",
     "vue-router": "^5.1.0"
+  },
+  "devDependencies": {
+    "vue-tsc": "^3.3.5"
   }
 }
