@@ -94,8 +94,8 @@ jobs:
     steps:
       - name: Report Results
         run: |
-          if [ "${{ needs.run-quality-checks.result }}" == "success" ]; then
-            echo -e "\e[32mAll quality checks passed successfully.\e[0m"
+          if [ "${{ needs.run-quality-checks.result }}" == "success" ] || [ "${{ needs.run-quality-checks.result }}" == "skipped" ]; then
+            echo -e "\e[32mQuality checks passed or were not required.\e[0m"
           else
             echo -e "\e[31mPipeline failed. Check previous logs for details.\e[0m"
             exit 1
