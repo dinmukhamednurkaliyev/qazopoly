@@ -15,6 +15,4 @@
 
 ## License
 
-This project is proprietary and closed-source. All rights reserved by the copyright holder.
-
-See the [LICENSE](LICENSE) file for detailed legal terms and restrictions regarding the source code.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
