@@ -1,4 +1,4 @@
-name: Quality Assurance
+name: Continuous Integration
 
 on:
   push:
@@ -63,12 +63,19 @@ jobs:
     steps:
       - uses: actions/checkout@v6.0.3
       - uses: oven-sh/setup-bun@v2.2.0
+        with:
+          cache: true
       
       - name: Install Dependencies
         run: |
           echo -e "\e[36mInstalling dependencies...\e[0m"
           bun install --frozen-lockfile
       
+      - name: Security Scan
+        run: |
+          echo -e "\e[35mRunning security audit...\e[0m"
+          bun audit || { echo -e "\e[31mSecurity vulnerabilities found!\e[0m"; exit 1; }
+
       - name: Analyze Code
         run: |
           echo -e "\e[33mRunning static analysis...\e[0m"
