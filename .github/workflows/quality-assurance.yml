@@ -36,6 +36,11 @@ jobs:
               - 'bun.lockb'
               - 'nuxt.config.ts'
               - 'eslint.config.mjs'
+      - name: Log Detected Changes
+        run: |
+          echo -e "\e[34mFrontend changed: ${{ steps.filter.outputs.frontend }}\e[0m"
+          echo -e "\e[34mServer changed: ${{ steps.filter.outputs.server }}\e[0m"
+          echo -e "\e[34mConfig changed: ${{ steps.filter.outputs.configuration }}\e[0m"
 
   label-pull-request:
     name: Label Pull Request
@@ -58,17 +63,26 @@ jobs:
     steps:
       - uses: actions/checkout@v6.0.3
       - uses: oven-sh/setup-bun@v2.2.0
+      
       - name: Install Dependencies
-        run: bun install --frozen-lockfile
+        run: |
+          echo -e "\e[36mInstalling dependencies...\e[0m"
+          bun install --frozen-lockfile
       
       - name: Analyze Code
-        run: bun run lint
+        run: |
+          echo -e "\e[33mRunning static analysis...\e[0m"
+          bun run lint || { echo -e "\e[31mLinting failed!\e[0m"; exit 1; }
         
       - name: Validate Types
-        run: bun run typecheck
+        run: |
+          echo -e "\e[33mChecking types...\e[0m"
+          bun run typecheck || { echo -e "\e[31mTypecheck failed!\e[0m"; exit 1; }
         
       - name: Build Application
-        run: bun run build
+        run: |
+          echo -e "\e[35mBuilding production build...\e[0m"
+          bun run build || { echo -e "\e[31mBuild failed!\e[0m"; exit 1; }
         env:
           NODE_ENV: production
 
@@ -78,6 +92,11 @@ jobs:
     needs: [run-quality-checks]
     if: always()
     steps:
-      - name: Check Completion
-        if: ${{ needs.run-quality-checks.result != 'success' }}
-        run: exit 1
+      - name: Report Results
+        run: |
+          if [ "${{ needs.run-quality-checks.result }}" == "success" ]; then
+            echo -e "\e[32mAll quality checks passed successfully.\e[0m"
+          else
+            echo -e "\e[31mPipeline failed. Check previous logs for details.\e[0m"
+            exit 1
+          fi
