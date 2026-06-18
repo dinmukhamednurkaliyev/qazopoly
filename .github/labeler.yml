@@ -1,12 +1,34 @@
-
 infrastructure:
   - changed-files:
-      - any-glob-to-any-file: '.github/**/*'
+      - any-glob-to-any-file:
+          - '.github/**'
+          - 'docker/**'
+          - 'terraform/**'
+          - 'k8s/**'
+          - '*.config.*'
+          - 'tsconfig.json'
 
 frontend:
   - changed-files:
-      - any-glob-to-any-file: ['components/**/*', 'pages/**/*', 'assets/**/*']
+      - any-glob-to-any-file:
+          - 'app.vue'
+          - 'components/**'
+          - 'pages/**'
+          - 'assets/**'
 
-game-engine:
+server:
   - changed-files:
-      - any-glob-to-any-file: ['plugins/phaser/**/*', 'game/**/*'] 
+      - any-glob-to-any-file:
+          - 'server/**'
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'package.json'
+          - '*-lock.*'
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.md'
+          - 'LICENSE'
